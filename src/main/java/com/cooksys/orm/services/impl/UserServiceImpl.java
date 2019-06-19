@@ -2,10 +2,13 @@ package com.cooksys.orm.services.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.cooksys.orm.dto.UserRequestDto;
 import com.cooksys.orm.dto.UserResponseDto;
 import com.cooksys.orm.services.UserService;
 
+@Service("UserService")
 public class UserServiceImpl implements UserService{
 
 	@Override

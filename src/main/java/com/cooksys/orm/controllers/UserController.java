@@ -3,14 +3,14 @@ package com.cooksys.orm.controllers;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cooksys.orm.dto.UserRequestDto;
 import com.cooksys.orm.dto.UserResponseDto;
 import com.cooksys.orm.services.UserService;
-
-
-
 
 
 @RestController
@@ -18,7 +18,6 @@ import com.cooksys.orm.services.UserService;
 public class UserController {
 	
 	
-
 	    private UserService userService;
 
 	    public UserController(UserService userService) {
@@ -31,8 +30,8 @@ public class UserController {
 	    }
 	    
 	    @PostMapping
-	    public UserResponseDto createStudent(@RequestBody UserRequestDto studentDto) {
-	        return userService.createStudent(studentDto);
+	    public UserResponseDto createUser(@RequestBody UserRequestDto studentDto) {
+	        return userService.createUser(studentDto);
 	    }
 
 //	    @GetMapping
