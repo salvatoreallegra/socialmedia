@@ -24,11 +24,11 @@ public class UserServiceImpl implements UserService {
 	private UserRepository userRepository;
 	private UserMapper userMapper;
 	
-	public UserServiceImpl() {
-		
-	}
+//	public UserServiceImpl() {
+//		
+//	}
 
-	public UserServiceImpl(UserMapper userMapper, UserRepository userRepository) {
+	public UserServiceImpl(UserRepository userRepository, UserMapper userMapper) {
 		this.userRepository = userRepository;
 		this.userMapper = userMapper;
 
@@ -42,6 +42,19 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public UserResponseDto createUser(UserRequestDto userDto) {
+		
+			
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("><><<>><><><><><><><><><><><><><><><><><><><><><>");
+		System.out.println("output***************************************************");
+		System.out.println(userDto.getProfile().getFirstName());
+		System.out.println(userDto.toString());
+		System.out.println("output^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+		//System.out.println(userRepository.toString());
+		//System.out.println(userMapper.toString());
+		
+	
+		
 		return userMapper.entityToDto(userRepository.saveAndFlush(userMapper.dtoToEntity(userDto)));
 	}
 

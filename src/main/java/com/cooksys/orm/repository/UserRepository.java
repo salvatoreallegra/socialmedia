@@ -8,4 +8,6 @@ import com.cooksys.orm.entity.TwitterUser;
 @Repository
 public interface UserRepository extends JpaRepository<TwitterUser,Integer> {
 	
+	
+	
 }

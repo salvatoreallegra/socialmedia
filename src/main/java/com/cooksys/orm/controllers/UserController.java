@@ -14,10 +14,10 @@ import com.cooksys.orm.services.UserService;
 
 
 @RestController
-@RequestMapping(path = "/users/@")
+@RequestMapping(path = "/users")
 public class UserController {
 	
-	
+	    
 	    private UserService userService;
 
 	    public UserController(UserService userService) {
@@ -30,8 +30,8 @@ public class UserController {
 	    }
 	    
 	    @PostMapping
-	    public UserResponseDto createUser(@RequestBody UserRequestDto studentDto) {
-	        return userService.createUser(studentDto);
+	    public UserResponseDto createUser(@RequestBody UserRequestDto userDto) {
+	        return userService.createUser(userDto);
 	    }
 
 //	    @GetMapping
