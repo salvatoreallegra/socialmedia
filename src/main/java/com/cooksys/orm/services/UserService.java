@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import com.cooksys.orm.dto.UserRequestDto;
 import com.cooksys.orm.dto.UserResponseDto;
 
-@Service
 public interface UserService {
 	
 	    List<UserResponseDto> getAllUsers();
