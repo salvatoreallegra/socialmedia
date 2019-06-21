@@ -25,6 +25,8 @@ public interface UserService {
 //
 //	    UserResponseDto deleteCourse(Integer id);
 
+		UserResponseDto userNameAvailable(String userName);
+
 		
 
 

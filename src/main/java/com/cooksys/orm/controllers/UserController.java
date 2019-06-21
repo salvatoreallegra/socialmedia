@@ -24,32 +24,47 @@ public class UserController {
 		this.userService = userService;
 	}
 
+	//Get all users
 	@GetMapping
 	public List<UserResponseDto> getAllCourses() {
 		return userService.getAllUsers();
 	}
-
+	//Create a user
 	@PostMapping
 	public UserResponseDto createUser(@RequestBody UserRequestDto userDto) {
 		return userService.createUser(userDto);
 	}
 
+	//Get a user based on User Name
 	@GetMapping("/@{name}")
 	public UserResponseDto getUserByName(@PathVariable String name) {
 		return userService.getUserByName(name);
 	}
-	@GetMapping("/validate/username/available/@{userName}")
+
+	//Check if a user name already exists
+	@GetMapping("/validate/username/exists/@{userName}")
 	public boolean userNameExists(@PathVariable String userName) {
-		
+
 		UserResponseDto nameExists = userService.userNameExists(userName);
-		if(nameExists == null) {
+		if (nameExists == null) {
 			return false;
-		}
-		else {
+		} else {
 			return true;
 		}
-			
-		
+
 	}
+	//Check if a user name is available
+	@GetMapping("/validate/username/available/@{userName}")
+	public boolean userNameAvailable(@PathVariable String userName) {
+
+		UserResponseDto nameAvailable = userService.userNameAvailable(userName);
+		if (nameAvailable == null) {
+			return true;
+		} else {
+			return false;
+		}
+
+	}
+	
 
 }
