@@ -17,13 +17,13 @@ import com.cooksys.orm.repository.UserRepository;
 //import com.cooksys.orm.repository.UserRepository;
 import com.cooksys.orm.services.UserService;
 
+
 @Service
 public class UserServiceImpl implements UserService {
 
-	
 	private UserRepository userRepository;
 	private UserMapper userMapper;
-	
+
 //	public UserServiceImpl() {
 //		
 //	}
@@ -36,31 +36,18 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<UserResponseDto> getAllUsers() {
-		 return userMapper.entitiesToDtos(userRepository.findAll());
+		return userMapper.entitiesToDtos(userRepository.findAll());
 	}
 
 	@Override
 	public UserResponseDto createUser(UserRequestDto userDto) {
-		
-			
-		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-		System.out.println("><><<>><><><><><><><><><><><><><><><><><><><><><>");
-		System.out.println("output***************************************************");
-		System.out.println(userDto.getProfile().getFirstName());
-		System.out.println(userDto.toString());
-		System.out.println("output^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-		//System.out.println(userRepository.toString());
-		//System.out.println(userMapper.toString());
-		
-	
-		
+
 		return userMapper.entityToDto(userRepository.saveAndFlush(userMapper.dtoToEntity(userDto)));
 	}
 
-//	 @Override
-//	    public StudentResponseDto createStudent(StudentRequestDto studentDto) {
-//	        return studentMapper.entityToDto(studentRepository.saveAndFlush(studentMapper.dtoToEntity(studentDto)));
-//	    }
-//	
-
+	@Override
+	public UserResponseDto getUserByName(String name) {
+		
+		return userMapper.entityToDto(userRepository.findByName(name));
+	}
 }
