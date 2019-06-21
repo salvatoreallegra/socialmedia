@@ -9,7 +9,6 @@ import com.cooksys.orm.dto.UserRequestDto;
 import com.cooksys.orm.dto.UserResponseDto;
 import com.cooksys.orm.entity.TwitterUser;
 
-
 @Mapper(componentModel = "spring")
 public interface UserMapper {
 

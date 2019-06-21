@@ -17,16 +17,11 @@ import com.cooksys.orm.repository.UserRepository;
 //import com.cooksys.orm.repository.UserRepository;
 import com.cooksys.orm.services.UserService;
 
-
 @Service
 public class UserServiceImpl implements UserService {
 
 	private UserRepository userRepository;
 	private UserMapper userMapper;
-
-//	public UserServiceImpl() {
-//		
-//	}
 
 	public UserServiceImpl(UserRepository userRepository, UserMapper userMapper) {
 		this.userRepository = userRepository;
@@ -47,19 +42,20 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public UserResponseDto getUserByName(String name) {
-		
+
 		return userMapper.entityToDto(userRepository.findByName(name));
 	}
+
 	@Override
 	public UserResponseDto userNameExists(String name) {
-		
+
 		return userMapper.entityToDto(userRepository.findByName(name));
 	}
 
 	@Override
 	public UserResponseDto userNameAvailable(String userName) {
-		
+
 		return userMapper.entityToDto(userRepository.findByName(userName));
 	}
-	
+
 }

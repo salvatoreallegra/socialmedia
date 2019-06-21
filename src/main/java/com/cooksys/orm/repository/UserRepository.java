@@ -12,10 +12,7 @@ import com.cooksys.orm.entity.TwitterUser;
 @Repository
 public interface UserRepository extends JpaRepository<TwitterUser, Integer> {
 
-	// @Query("Select TU from twitter_user where TU.credential_user_name =?1")
 	@Query(value = "SELECT * FROM twitter_user WHERE credential_user_name = ?1", nativeQuery = true)
 	TwitterUser findByName(String name);
-
-	// List<TwitterUser> findByName(String name);
 
 }

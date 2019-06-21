@@ -10,12 +10,6 @@ import javax.persistence.Id;
 @Embeddable
 public class Profile {
 
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
-//	private int Id;
-
-	
-
 	private String firstName;
 	private String lastName;
 
@@ -27,15 +21,6 @@ public class Profile {
 	public Profile() {
 
 	}
-
-//	public Profile(int id, String firstName, String lastName, String email, String phone) {
-//		super();
-//		this.Id = id;
-//		this.firstName = firstName;
-//		this.lastName = lastName;
-//		this.email = email;
-//		this.phone = phone;
-//	}
 
 	public String getFirstName() {
 		return firstName;
@@ -68,13 +53,5 @@ public class Profile {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	
-//	public int getId() {
-//		return Id;
-//	}
-//
-//	public void setId(int id) {
-//		Id = id;
-//	}
 
 }

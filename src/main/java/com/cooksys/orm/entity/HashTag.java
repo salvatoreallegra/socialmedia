@@ -23,12 +23,6 @@ public class HashTag {
 
 	}
 
-//	public HashTag(String label, Timestamp firstUsed, Timestamp lastUsed) {
-//		this.label = label;
-//		this.firstUsed = firstUsed;
-//		this.lastUsed = lastUsed;
-//	}
-
 	public String getLabel() {
 		return label;
 	}

@@ -6,7 +6,7 @@ import com.cooksys.orm.entity.Tweet;
 import com.cooksys.orm.entity.TwitterUser;
 
 public class TweetResponseDto {
-	
+
 	private int id;
 	private TwitterUser author;
 
@@ -16,7 +16,7 @@ public class TweetResponseDto {
 	private Tweet inReplyTo;
 
 	private Tweet repostOf;
-	
+
 	public int getId() {
 		return id;
 	}
@@ -66,9 +66,7 @@ public class TweetResponseDto {
 	}
 
 	public TweetResponseDto() {
-		
-		
+
 	}
-	
 
 }

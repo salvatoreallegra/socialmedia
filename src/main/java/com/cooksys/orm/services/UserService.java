@@ -8,26 +8,16 @@ import com.cooksys.orm.dto.UserRequestDto;
 import com.cooksys.orm.dto.UserResponseDto;
 import com.cooksys.orm.entity.TwitterUser;
 
-
 public interface UserService {
-	
-	    List<UserResponseDto> getAllUsers();
 
-	    UserResponseDto createUser(UserRequestDto userDto); 
-	    
-	    UserResponseDto getUserByName(String name);
-	    
-	    UserResponseDto userNameExists(String name);
-//
-//	    UserResponseDto readCourse(Integer id);
-//
-//	    UserResponseDto updateCourse(Integer id, UserRequestDto courseDto);
-//
-//	    UserResponseDto deleteCourse(Integer id);
+	List<UserResponseDto> getAllUsers();
 
-		UserResponseDto userNameAvailable(String userName);
+	UserResponseDto createUser(UserRequestDto userDto);
 
-		
+	UserResponseDto getUserByName(String name);
 
+	UserResponseDto userNameExists(String name);
+
+	UserResponseDto userNameAvailable(String userName);
 
 }

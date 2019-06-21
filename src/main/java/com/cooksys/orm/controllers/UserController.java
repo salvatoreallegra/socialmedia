@@ -2,6 +2,7 @@ package com.cooksys.orm.controllers;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,24 +25,25 @@ public class UserController {
 		this.userService = userService;
 	}
 
-	//Get all users
+	// Get all users
 	@GetMapping
 	public List<UserResponseDto> getAllCourses() {
 		return userService.getAllUsers();
 	}
-	//Create a user
+
+	// Create a user
 	@PostMapping
 	public UserResponseDto createUser(@RequestBody UserRequestDto userDto) {
 		return userService.createUser(userDto);
 	}
 
-	//Get a user based on User Name
+	// Get a user based on User Name
 	@GetMapping("/@{name}")
 	public UserResponseDto getUserByName(@PathVariable String name) {
 		return userService.getUserByName(name);
 	}
 
-	//Check if a user name already exists
+	// Check if a user name already exists
 	@GetMapping("/validate/username/exists/@{userName}")
 	public boolean userNameExists(@PathVariable String userName) {
 
@@ -53,7 +55,8 @@ public class UserController {
 		}
 
 	}
-	//Check if a user name is available
+
+	// Check if a user name is available
 	@GetMapping("/validate/username/available/@{userName}")
 	public boolean userNameAvailable(@PathVariable String userName) {
 
@@ -65,6 +68,5 @@ public class UserController {
 		}
 
 	}
-	
 
 }

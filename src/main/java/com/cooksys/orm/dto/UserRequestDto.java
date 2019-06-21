@@ -7,15 +7,12 @@ import com.cooksys.orm.entity.Profile;
 
 public class UserRequestDto {
 
-	
 	private Credential credential;
 	private Profile profile;
-	//private Timestamp dateJoined;
+	// private Timestamp dateJoined;
 
 	public UserRequestDto() {
 	}
-
-
 
 	public Profile getProfile() {
 		return profile;
@@ -24,14 +21,6 @@ public class UserRequestDto {
 	public void setProfile(Profile profile) {
 		this.profile = profile;
 	}
-
-//	public Timestamp getDateJoined() {
-//		return dateJoined;
-//	}
-//
-//	public void setDateJoined(Timestamp dateJoined) {
-//		this.dateJoined = dateJoined;
-//	}
 
 	public Credential getCredential() {
 		return credential;
