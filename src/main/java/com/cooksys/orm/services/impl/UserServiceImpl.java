@@ -36,8 +36,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<UserResponseDto> getAllUsers() {
-		// TODO Auto-generated method stub
-		return null;
+		 return userMapper.entitiesToDtos(userRepository.findAll());
 	}
 
 	@Override
