@@ -50,4 +50,10 @@ public class UserServiceImpl implements UserService {
 		
 		return userMapper.entityToDto(userRepository.findByName(name));
 	}
+	@Override
+	public UserResponseDto userNameExists(String name) {
+		
+		return userMapper.entityToDto(userRepository.findByName(name));
+	}
+	
 }

@@ -14,7 +14,6 @@ import com.cooksys.orm.dto.UserResponseDto;
 import com.cooksys.orm.entity.TwitterUser;
 import com.cooksys.orm.services.UserService;
 
-
 @RestController
 @RequestMapping(path = "/users")
 public class UserController {
@@ -34,12 +33,23 @@ public class UserController {
 	public UserResponseDto createUser(@RequestBody UserRequestDto userDto) {
 		return userService.createUser(userDto);
 	}
-	
-	
+
 	@GetMapping("/@{name}")
-    public UserResponseDto getUserByName(@PathVariable String name) {
-		//return name + " Boobie";
-       return userService.getUserByName(name);
-    }
+	public UserResponseDto getUserByName(@PathVariable String name) {
+		return userService.getUserByName(name);
+	}
+	@GetMapping("/validate/username/available/@{userName}")
+	public boolean userNameExists(@PathVariable String userName) {
+		
+		UserResponseDto nameExists = userService.userNameExists(userName);
+		if(nameExists == null) {
+			return false;
+		}
+		else {
+			return true;
+		}
+			
+		
+	}
 
 }

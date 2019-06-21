@@ -16,6 +16,8 @@ public interface UserService {
 	    UserResponseDto createUser(UserRequestDto userDto); 
 	    
 	    UserResponseDto getUserByName(String name);
+	    
+	    UserResponseDto userNameExists(String name);
 //
 //	    UserResponseDto readCourse(Integer id);
 //
