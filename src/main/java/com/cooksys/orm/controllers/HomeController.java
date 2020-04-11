@@ -10,7 +10,7 @@ public class HomeController {
 	
 	@GetMapping
 	public String Home() {
-		return "<h1>Social Media Api";
+		return "<h1>Social Media Api</h1>";
 	}
 
 }
